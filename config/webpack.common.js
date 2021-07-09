@@ -4,6 +4,7 @@ const ESLintPlugin = require('eslint-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const WebpackBar = require('webpackbar');
 
 module.exports = {
   resolve: {
@@ -67,6 +68,7 @@ module.exports = {
         collapseWhitespace: true
       }
     }),
+    new WebpackBar(),
     new ForkTsCheckerWebpackPlugin({
       async: false
     }),

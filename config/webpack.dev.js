@@ -12,13 +12,19 @@ const config = {
     path.join(__dirname, '../src/index.tsx')
   ],
   devtool: 'inline-source-map',
+  cache: {
+    type: 'filesystem',
+    buildDependencies: {
+      config: [__filename]
+    }
+  },
   plugins: [new ReactRefreshWebpackPlugin({overlay: false})],
   devServer: {
     historyApiFallback: true,
     host: '0.0.0.0',
     port: '5800',
-    static: '/assets/',
     hot: true,
+    open: true,
     proxy: [
       {
         context: ['/api/**'],

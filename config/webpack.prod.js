@@ -16,6 +16,7 @@ const config = {
       path.join(__dirname, '../src/index.tsx')
     ]
   },
+  cache: false,
   output: {
     path: path.join(__dirname, '../dist'),
     filename: 'js/[name].[chunkhash].js',
